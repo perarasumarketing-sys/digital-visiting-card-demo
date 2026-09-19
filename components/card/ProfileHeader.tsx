@@ -16,7 +16,7 @@ export default function ProfileHeader() {
         {/* Profile Image */}
         <div className="mx-auto h-28 w-28 overflow-hidden rounded-full border-4 border-white/20 bg-zinc-800 shadow-2xl animate-profile-glow">
           <Image
-            src="/images/profile.jpg"
+            src="/images/profile-new.jpg"
             alt={profile.name}
             width={112}
             height={112}

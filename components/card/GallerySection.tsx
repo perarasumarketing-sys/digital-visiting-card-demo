@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const galleryImages = [
-  "/images/gallery-1.jpg",
+  "/images/gallery-new 1.jpg",
   "/images/gallery-2.jpg",
-  "/images/gallery-3.jpg",
+  "/images/gallery-new 3.jpg",
 ];
 
 export default function GallerySection() {

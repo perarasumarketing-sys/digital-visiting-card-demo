@@ -27,7 +27,7 @@ export default function LocationSection() {
 
           {/* Location badge */}
           <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-2 text-xs font-bold text-zinc-800 shadow-lg backdrop-blur-md">
-            📍 Client Location
+            📍Location
           </div>
         </div>
 

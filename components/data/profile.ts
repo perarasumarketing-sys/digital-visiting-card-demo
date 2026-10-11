@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Trend Line Media",
+  name: "client name",
   role: "Digital Marketing & Creative Services",
   company: "Trend Line Media",
 

@@ -1,8 +1,17 @@
 "use client";
 
 import { profile } from "@/components/data/profile";
+import { template1Themes } from "@/components/data/themes";
 
-export default function CardActions() {
+type Theme = (typeof template1Themes)[keyof typeof template1Themes];
+
+type CardActionsProps = {
+  theme: Theme;
+};
+
+export default function CardActions({
+  theme,
+}: CardActionsProps) {
   const handleSaveContact = () => {
     const vCard = `BEGIN:VCARD
 VERSION:3.0
@@ -50,8 +59,18 @@ END:VCARD`;
 
   return (
     <section className="px-6 pb-8">
-      <div className="rounded-3xl bg-zinc-950 p-5 text-white shadow-xl">
-        <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-white/40">
+      {/* Main Card */}
+      <div
+        className="rounded-3xl p-5 text-white shadow-xl transition-colors duration-500"
+        style={{
+          backgroundColor: theme.primary,
+        }}
+      >
+        {/* Heading */}
+        <p
+          className="text-center text-xs font-medium uppercase tracking-[0.2em]"
+          style={{ color: `${theme.background}66` }}
+        >
           Keep In Touch
         </p>
 
@@ -59,30 +78,43 @@ END:VCARD`;
           Save this contact
         </h2>
 
-        <p className="mx-auto mt-2 max-w-xs text-center text-sm leading-5 text-white/40">
+        <p
+          className="mx-auto mt-2 max-w-xs text-center text-sm leading-5"
+          style={{ color: `${theme.background}70` }}
+        >
           Keep my details with you and share this card whenever you need.
         </p>
 
+        {/* Buttons */}
         <div className="mt-5 grid grid-cols-2 gap-3">
-          {/* Save */}
+          {/* Save Contact */}
           <button
             type="button"
             onClick={handleSaveContact}
-            className="group rounded-2xl bg-white px-4 py-4 text-sm font-bold text-zinc-900 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-95"
+            className="group rounded-2xl px-4 py-4 text-sm font-bold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl active:scale-95"
+            style={{
+              backgroundColor: theme.background,
+              color: theme.primary,
+            }}
           >
-            <span className="mr-2 transition-transform duration-300 group-hover:scale-110 inline-block">
+            <span className="mr-2 inline-block transition-transform duration-300 group-hover:scale-110">
               ↓
             </span>
             Save Contact
           </button>
 
-          {/* Share */}
+          {/* Share Card */}
           <button
             type="button"
             onClick={handleShare}
-            className="group rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-sm font-bold text-white backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/15 active:scale-95"
+            className="group rounded-2xl border px-4 py-4 text-sm font-bold backdrop-blur-md transition-all duration-300 hover:-translate-y-1 active:scale-95"
+            style={{
+              backgroundColor: `${theme.background}12`,
+              borderColor: `${theme.background}25`,
+              color: theme.background,
+            }}
           >
-            <span className="mr-2 transition-transform duration-300 group-hover:scale-110 inline-block">
+            <span className="mr-2 inline-block transition-transform duration-300 group-hover:scale-110">
               ↗
             </span>
             Share Card

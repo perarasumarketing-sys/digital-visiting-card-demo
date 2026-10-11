@@ -1,5 +1,5 @@
-import Template1 from "@/components/templates/Template1";
+import Template11 from "@/components/templates/Template11";
 
 export default function Home() {
-  return <Template1 />;
-}
+  return <Template11 />;
+} 
